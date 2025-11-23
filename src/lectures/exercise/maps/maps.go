@@ -28,7 +28,7 @@ const (
 
 // * Create a function to print server status, including:
 func printServerStatus(servers map[string]int) {
-	//  - Number of servers
+	// Number of servers
 	fmt.Println("\nThere are", len(servers), "servers")
 
 	stats := make(map[int]int)
@@ -47,7 +47,7 @@ func printServerStatus(servers map[string]int) {
 		}
 	}
 
-	//  - Number of servers for each status (Online, Offline, Maintenance, Retired)
+	//Number of servers for each status (Online, Offline, Maintenance, Retired)
 	fmt.Println(stats[Online], "servers are online")
 	fmt.Println(stats[Offline], "servers are offline")
 	fmt.Println(stats[Maintenance], "servers are undergoing maintenance")
@@ -57,31 +57,29 @@ func printServerStatus(servers map[string]int) {
 func main() {
 	servers := []string{"darkstar", "aiur", "omicron", "w359", "baseline"}
 
-	//* Store the existing slice of servers in a map
-	serverStatus := make(map[string]int)
-	//* Default all of the servers to `Online`
-	for _, server := range servers {
-		serverStatus[server] = Online
+	// Store servers in a map with default status Online
+	serverMap := make(map[string]int)
+	for _, s := range servers {
+		serverMap[s] = Online
 	}
 
-	//* Perform the following status changes and display server info:
-	//~ display server info
-	printServerStatus(serverStatus)
+	//Display server info
+	printServerStatus(serverMap)
 
-	//~ change `darkstar` to `Retired`
-	serverStatus["darkstar"] = Retired
-	//~ change `aiur` to `Offline`
-	serverStatus["aiur"] = Offline
+	//Change `darkstar` → Retired
+	serverMap["darkstar"] = Retired
 
-	//~ display server info
-	printServerStatus(serverStatus)
+	//Change `aiur` → Offline
+	serverMap["aiur"] = Offline
 
-	//~ change all servers to `Maintenance`
-	for server, status := range serverStatus {
-		if status == Online {
-			serverStatus[server] = Maintenance
-		}
+	//Display server info again
+	printServerStatus(serverMap)
+
+	//Change all servers → Maintenance
+	for k := range serverMap {
+		serverMap[k] = Maintenance
 	}
-	//~ display server info
-	printServerStatus(serverStatus)
+
+	//Display server info again
+	printServerStatus(serverMap)
 }
