@@ -14,4 +14,18 @@ package main
 import "fmt"
 
 func main() {
+
+	//! the switch type has to be equal to the case type
+	switch age := float32(3.5); {
+	case age == 0:
+		fmt.Println("calssification: Newborn")
+	case age < 4:
+		fmt.Println("calssification: Toddler")
+	case age <= 12:
+		fmt.Println("calssification: Child")
+	case age <= 17:
+		fmt.Println("calssification: Teenager")
+	default:
+		fmt.Println("calssification: Adult")
+	}
 }
