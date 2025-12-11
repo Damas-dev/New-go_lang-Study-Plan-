@@ -1,8 +1,14 @@
-package main
-
-//* this project can now calculate the area of  all trinagles
+//*what the project can do
+//! this project can now calculate the area of  all types trinagles
 //! it can only calulate the perimeter and hypotenuse of  a right angled ,isosceles tringle and equilateral triangle
 //! it can neither  compute the  perimeter nor hypotenuse of any other irregular triagle
+
+// * what I could add on the project
+// ! the program should be able the commpute the area and perimeter for all types of triangles
+// ! add user imput where
+// ! the user could input a list on a list of codinates, for number of tringles
+// ! the program will provide an output in form of a table
+package main
 
 import (
 	"fmt"
