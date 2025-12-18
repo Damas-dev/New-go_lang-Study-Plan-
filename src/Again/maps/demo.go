@@ -29,22 +29,23 @@ func main() {
 
 	school["form4"] = school["form4a"]
 	delete(school, "form4a")
-	fmt.Println(school)
+	for class, total := range school {
+		fmt.Println(class, total)
+	}
 
-	// finding a class
+	// finding a class(form4a)
 	form4a, found := school["form4a"]
-
-	fmt.Println("=== are their students===")
+	fmt.Print("is their form4a? ")
 	if found {
-		fmt.Println("their are", form4a, "in form4a")
+		fmt.Println("they are", form4a, "in form4a")
 	} else {
 		fmt.Println("nope")
 	}
-	var totalstudent = 0
-	for _, noStudent := range school {
-		totalstudent += noStudent
+	var totalStudentInSchool = 0
+	for _, numStudentInclass := range school {
+		totalStudentInSchool += numStudentInclass
 	}
 
-	fmt.Println("their are", totalstudent, " students in school")
+	fmt.Println("their are", totalStudentInSchool, " students in school")
 
 }
