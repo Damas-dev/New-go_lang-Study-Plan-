@@ -62,7 +62,7 @@ func printaccountStatistics(users map[string]string) {
 }
 
 func main() {
-	users := []string{"Damas", "alice", "Adroit", "john", "Octo", "piko"}
+	users := []string{"Damas", "alice", "Win", "john", "Octo", "piko"}
 
 	// user status map
 	usersStatus := make(map[string]string)
