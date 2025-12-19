@@ -4,6 +4,16 @@ import (
 	"fmt"
 )
 
+func max(slice []int) int {
+	max := slice[0]
+	for _, value := range slice {
+		if value >= max {
+			max = value
+		}
+	}
+	return max
+}
+
 func main() {
 	fmt.Println("this is the  maps demo")
 
@@ -47,5 +57,18 @@ func main() {
 	}
 
 	fmt.Println("their are", totalStudentInSchool, " students in school")
+
+	listStudents := []int{}
+
+	for _, total := range school {
+		listStudents = append(listStudents, total)
+	}
+	fmt.Println(listStudents)
+
+	for class, total := range school {
+		if total == max(listStudents) {
+			fmt.Println("class:", class, "has the highest number of students:", total)
+		}
+	}
 
 }
